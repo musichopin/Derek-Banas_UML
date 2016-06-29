@@ -1,0 +1,61 @@
+Example Use Case Description
+
+Description
+
+The user enters their card and PIN. Security verifies the card. The user selects the account to use. They select an amount. Security verifies if the amount is available. The system comes to a conclusion on if money is provided. The user selects funds as $10s or $20s. Security provides the funds if possible. Security provides a receipt and the users card.
+
+Trigger
+
+    Machine receives a card
+    User enters a PIN
+
+Actors
+
+    Customer
+    Bank Security
+
+Preconditions
+
+    Secure Connection to Bank
+    Bank Has Cash
+
+Goals (Successful Conclusion)
+
+    Secure Client Accounts
+    Provide Customer with Funds
+
+Failed Conclusion
+
+    Invalid Card
+    Invalid PIN
+    Customer Insufficient Funds
+    ATM Insufficient Funds
+    Over Daily Limit
+    Stolen Card
+
+Extensions (Alternatives)
+
+    If PIN is Invalid 3 Times (Eat Card)
+    If Card Marked as Stolen (Eat Card)
+
+Steps of Execution (Requirements)
+
+    1. Customer Inserts Card
+    1A. Card is Invalid
+    1B. Eject Card
+    2. Card is Validated
+    3. Customer Enters PIN
+    3A. PIN is Invalid
+    3B. PIN is Invalid 3 Times
+    3C. Card Marked as Stolen
+    4. PIN is Validated
+    5. Account is Selected
+    6. Amount is Selected
+    6A. Over Daily Maximum
+    6B. Over Account Funds Available
+    6C. Over Funds in Machine
+    6D. Ask for New Amount
+    7. Provide $10 or $20
+    8. Provide Funds
+    Provide Receipt
+    10. Eject Card
